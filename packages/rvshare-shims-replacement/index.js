@@ -1,5 +1,5 @@
 /**
- * Forked from: https://gist.github.com/lencioni/6bccd9e5071271da4175776de29f25d0
+ * "Forked" from: https://gist.github.com/lencioni/6bccd9e5071271da4175776de29f25d0
  *
  * Usage:
  *
@@ -9,7 +9,7 @@
  *      ),
  *    ]
  */
-function moduleReplacementsPlugins() {
+function shimsReplacements() {
   // Avoid unnecessary shims packages nested in dependencies.
   const moduleReplacements = [
     [/^object[-.]assign$/, require.resolve('./shims/object.assign')],
@@ -41,4 +41,4 @@ function moduleReplacementsPlugins() {
   return moduleReplacements;
 }
 
-module.exports = moduleReplacementsPlugins;
+module.exports = shimsReplacements;
