@@ -1,0 +1,15 @@
+{
+  "name": "@rvshare/shims-replacement",
+  "version": "0.0.0",
+  "main": "dist/polyfill-nomodule.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepublish": "microbundle index.js -f cjs --no-sourcemap --external none --target node",
+    "build": "microbundle watch index.js -f cjs --no-sourcemap --external none --target node"
+  },
+  "devDependencies": {
+    "microbundle": "0.11.0"
+  }
+}

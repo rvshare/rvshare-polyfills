@@ -1,0 +1,40 @@
+{
+  "name": "rvshare-polyfills",
+  "private": true,
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-react": "7.18.3",
+    "eslint-plugin-react-hooks": "2.4.0",
+    "husky": "4.2.3",
+    "lerna": "3.20.2",
+    "lint-staged": "10.0.7",
+    "prettier": "1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./packages/**/*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "lerna": "lerna",
+    "dev": "lerna run start --stream --parallel",
+    "test": "lerna run test --",
+    "build": "lerna run build",
+    "lint": "lerna run lint",
+    "lint-staged": "lint-staged",
+    "prepublish": "lerna run prepublish",
+    "publish-canary": "lerna version prerelease --preid canary --force-publish",
+    "publish-stable": "lerna version --force-publish"
+  }
+}
