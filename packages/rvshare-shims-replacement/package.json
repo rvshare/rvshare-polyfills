@@ -1,9 +1,10 @@
 {
   "name": "@rvshare/shims-replacement",
-  "version": "0.0.1-canary.0",
+  "version": "0.0.1-canary.1",
   "main": "dist/rvshare-shims-replacement.js",
   "files": [
-    "dist"
+    "dist",
+    "shims"
   ],
   "scripts": {
     "prepublish": "microbundle index.js -f cjs --no-sourcemap --external none --target node",
