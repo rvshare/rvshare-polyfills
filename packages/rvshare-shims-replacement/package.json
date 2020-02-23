@@ -1,7 +1,7 @@
 {
   "name": "@rvshare/shims-replacement",
-  "version": "0.0.0",
-  "main": "dist/polyfill-nomodule.js",
+  "version": "0.0.1-canary.0",
+  "main": "dist/rvshare-shims-replacement.js",
   "files": [
     "dist"
   ],
