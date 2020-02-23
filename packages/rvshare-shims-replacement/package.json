@@ -8,9 +8,10 @@
   ],
   "scripts": {
     "prepublish": "microbundle index.js -f cjs --no-sourcemap --external none --target node",
-    "build": "microbundle watch index.js -f cjs --no-sourcemap --external none --target node"
+    "build": "microbundle build index.js -f cjs --no-sourcemap --external none --target node && ncp ./shims ./dist/shims"
   },
   "devDependencies": {
-    "microbundle": "0.11.0"
+    "microbundle": "0.11.0",
+    "ncp": "2.0.0"
   }
 }
