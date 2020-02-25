@@ -1,6 +1,6 @@
 {
   "name": "@rvshare/polyfill-nomodule",
-  "version": "0.0.1-canary.1",
+  "version": "0.1.0",
   "description": "A polyfill for non-dead, nomodule browsers.",
   "main": "dist/polyfill-nomodule.js",
   "files": [
