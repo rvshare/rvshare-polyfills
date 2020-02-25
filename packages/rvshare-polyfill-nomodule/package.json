@@ -3,6 +3,9 @@
   "version": "0.0.1-canary.0",
   "description": "A polyfill for non-dead, nomodule browsers.",
   "main": "dist/polyfill-nomodule.js",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "scripts": {
     "prepublish": "microbundle src/index.js -f iife --no-sourcemap --external none",
