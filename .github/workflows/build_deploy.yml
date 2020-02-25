@@ -1,0 +1,33 @@
+on:
+    push:
+      branches: [canary]
+
+  name: Build and deploy
+
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - run: git fetch --depth=1 origin +refs/tags/*:refs/tags/*
+        - run: yarn install --frozen-lockfile --check-files
+        - uses: actions/cache@v1
+          id: cache-build
+          with:
+            path: '.'
+            key: ${{ github.sha }}
+
+    publishRelease:
+      name: Potentially publish release
+      runs-on: ubuntu-latest
+      needs: [testsPass]
+      env:
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      steps:
+        - uses: actions/cache@v1
+          id: restore-build
+          with:
+            path: '.'
+            key: ${{ github.sha }}
+
+        - run: ./publish-release.sh
