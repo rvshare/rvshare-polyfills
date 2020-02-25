@@ -7,8 +7,8 @@
     "shims"
   ],
   "scripts": {
-    "prepublish": "microbundle index.js -f cjs --no-sourcemap --external none --target node",
-    "build": "microbundle build index.js -f cjs --no-sourcemap --external none --target node && ncp ./shims ./dist/shims"
+    "prepublish": "microbundle src/index.js -f cjs --no-sourcemap --external none --target node",
+    "build": "microbundle build src/index.js -f cjs --no-sourcemap --external none --target node && ncp ./src/shims ./dist/shims"
   },
   "devDependencies": {
     "microbundle": "0.11.0",
