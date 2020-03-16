@@ -6,8 +6,8 @@
     "dist/**"
   ],
   "scripts": {
-    "prepublish": "microbundle src/index.js -f cjs --no-sourcemap --external none --target node && mkdir ./dist/shims && cp -r ./src/shims/* ./dist/shims",
-    "build": "microbundle build src/index.js -f cjs --no-sourcemap --external none --target node && mkdir ./dist/shims && cp -r ./src/shims/* ./dist/shims"
+    "prepublish": "microbundle src/index.js -f cjs --no-sourcemap --external none --target node && mkdir -p ./dist/shims && cp -r ./src/shims/* ./dist/shims",
+    "build": "microbundle build src/index.js -f cjs --no-sourcemap --external none --target node && mkdir -p ./dist/shims && cp -r ./src/shims/* ./dist/shims"
   },
   "devDependencies": {
     "microbundle": "0.11.0",
